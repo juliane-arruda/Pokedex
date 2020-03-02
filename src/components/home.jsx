@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { pokemonList } from '../api/pokemon-api';
+import FuzzySearch from 'fuzzy-search';
 
 class Home extends Component {
   state = {
@@ -15,8 +16,11 @@ class Home extends Component {
   }
 
   applyFilter = () => {
+    const searcher = new FuzzySearch(this.state.list, ['name'], {
+      caseSensitive: false,
+    });
     this.setState({
-      filterList: this.state.list.filter((pokemon) => pokemon.name.indexOf(this.state.filter) !== -1)
+      filterList: searcher.search(this.state.filter)
     })
   }
 
@@ -33,7 +37,7 @@ class Home extends Component {
       <div>
         <input value={this.state.filter} onChange={this.setFilter} />
         <ul>
-          {this.state.filterList.map((elem) => <li>{elem.name}</li>)}
+          {this.state.filterList.map((elem, position) => <li>{elem.name} {position + 1}</li>)}
         </ul>
       </div>
     )
