@@ -55,13 +55,6 @@ class Home extends Component {
                 </div>
               </Link>)}
           </section>}
-
-        {/* <div>
-          {this.state.filterList.map((elem, position) =>
-            <div>
-              <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${(position + 1).toString().padStart(3, '0')}.png`} alt="Pokémon" /> {elem.name} {position + 1}
-            </div>)}
-        </div> */}
       </div>
     )
   }
