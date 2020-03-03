@@ -4,19 +4,24 @@
 
 ## Pokédex 1° Geração
 
-Este é um aplicativo responsivo do **Pokémon** desenvolvido com React aonde o usuário pode pesquisar por seu pokemon preferido e ver seus detalhes.
+Este é um site responsivo do **Pokémon** desenvolvido com React aonde o usuário pode pesquisar por seus pokémons preferido e ver seus detalhes.
+
+![tela-principal](https://user-images.githubusercontent.com/43623865/75754763-08fcd700-5d0c-11ea-9fc7-ed2c4f0881a8.png)
+
+![filtro](https://user-images.githubusercontent.com/43623865/75754822-27fb6900-5d0c-11ea-8ea1-5e3c657bd745.png)
+
+![detalhe](https://user-images.githubusercontent.com/43623865/75754842-347fc180-5d0c-11ea-8ed5-e9937e59a539.png)
 
 ### Instruções 
+
 Para executar o projeto você vai precisar:
 
-1. Tenha o node.js instalado (recomendada a versão 12.13.1)
-2. Executar `npm install`
-3. Executar `npm start`
-4. Abrir o navegador na url http://localhost:3000/
-5. Procurar pelo seu Pokémon preferido da 1° geração.
+1. Executar `npm install`
+2. Executar `npm start`
+3. Abrir o navegador na url http://localhost:3000/
+4. Procurar pelo seu Pokémon preferido e ver sua informação.
 
 ### Tecnologias
-# Markdown
 - Javascript
 - React.js
 - React-Router-Dom
@@ -26,6 +31,5 @@ Para executar o projeto você vai precisar:
 ### Sobre mim
 Este aplicativo foi desenvolvido com por:
 
-# Markdown
-- https://github.com/juliane-arruda
+- [Juliane Arruda] (https://github.com/juliane-arruda)
 
