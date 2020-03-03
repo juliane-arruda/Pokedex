@@ -7,3 +7,7 @@ export const pokemonList = () => {
 export const pokemonDetails = (id) => {
   return axios.get('https://pokeapi.co/api/v2/pokemon-species/' + id);
 }
+
+export const pokemonTypes = (id) => {
+  return axios.get('https://pokeapi.co/api/v2/pokemon/' + id);
+}
