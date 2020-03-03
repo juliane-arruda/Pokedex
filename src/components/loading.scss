@@ -1,0 +1,15 @@
+.loading {
+  animation: spin 1.5s linear infinite;
+  width: 100px;
+  height: 100px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
