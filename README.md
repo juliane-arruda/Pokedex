@@ -1,4 +1,4 @@
-# frontend-simple-test (Dasa Front-End)
+# Frontend-Simple-Test (Dasa Front-End)
 
 *Este projeto é um teste Front-End.*
 
@@ -22,12 +22,12 @@ Para executar o projeto você vai precisar:
 1. Executar `npm install`
 2. Executar `npm start`
 3. Abrir o navegador na url http://localhost:3000/
-4. Procurar pelo seu Pokémon preferido e ver sua informação.
+4. Procurar pelos seus Pokémons preferidos e ver suas informações.
 
 ### Tecnologias
+- PokéAPI
 - Javascript
 - React.js
-- React-Router-Dom
 - SCSS
 - Bootstrap
 
