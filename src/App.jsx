@@ -4,21 +4,21 @@ import { Switch, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import Details from './components/details';
 import Footer from './components/footer';
-import './App.css';
 import Navbar from './components/navbar';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
-    <div>
+    <Router>
       <Navbar />
-      <Router>
+      <main className="flex-shrink-0">
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/details/:id" component={Details} />
         </Switch>
-      </Router>
+      </main>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
