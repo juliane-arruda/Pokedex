@@ -35,6 +35,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <img className="img-fluid img-thumbnail" src="/images/pokemon-logo.png" alt="Pokémon-logo" />
         <input class="form-control form-control-lg col-12" value={this.state.filter} onChange={this.setFilter} placeholder="Pesquise por um Pokémon" />
         <div>
           {this.state.filterList.map((elem, position) =>
