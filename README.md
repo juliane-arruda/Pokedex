@@ -32,7 +32,7 @@ Para executar o projeto você vai precisar:
 - Bootstrap
 
 ### Sobre mim
-Este aplicativo foi desenvolvido com por:
+Este aplicativo foi desenvolvido por:
 
 - [Juliane Arruda](https://github.com/juliane-arruda)
 
