@@ -35,10 +35,14 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <input value={this.state.filter} onChange={this.setFilter} />
-        <ul>
-          {this.state.filterList.map((elem, position) => <li> <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${(position + 1).toString().padStart(3,'0')}.png`} alt="" />{elem.name} {position + 1}</li>)}
-        </ul>
+        <input class="form-control form-control-lg col-12" value={this.state.filter} onChange={this.setFilter} placeholder="Pesquise por um Pokémon" />
+        <div>
+          {this.state.filterList.map((elem, position) =>
+            <div>
+              <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${(position + 1).toString().padStart(3, '0')}.png`} alt="Pokémon" /> {elem.name} {position + 1}
+            </div>)}
+        </div>
+
       </div>
     )
   }
