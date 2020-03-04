@@ -29,11 +29,15 @@ class Home extends Component {
   }
 
   async componentDidMount() {
-    const list = await pokemonList();
+    try {
+      const list = await pokemonList();
 
-    this.setState({
-      list: list.data.results.map((pokemon, position) => ({ ...pokemon, id: position + 1 })),
-    }, this.applyFilter)
+      this.setState({
+        list: list.data.results.map((pokemon, position) => ({ ...pokemon, id: position + 1 })),
+      }, this.applyFilter);
+    } catch (e) {
+      this.setState({ error: true })
+    }
   }
 
 
@@ -41,25 +45,37 @@ class Home extends Component {
     return (
       <div className="container-fluid home-page">
         <input className="form-control form-control-lg col-12 d-flex justify-content-center" type="search" value={this.state.filter} onChange={this.setFilter} placeholder="Pesquise por um Pokémon" />
-        {this.state.list === null ?
-          <Loading /> :
-          <section className="home-card">
-            {this.state.filterList.length === 0 ?
-              <div className="card mt-5">
-                <div className="card-body">
-                  <h5 className="card-title">Nenhum Pokémon encontrado verifique sua pesquisa</h5>
-                </div>
-              </div> : this.state.filterList.map((elem) =>
-                <Link to={`/details/${elem.id}`} className="card m-3" style={{ width: '18rem' }}>
-                  <div>
-                    <PokemonImg id={elem.id} />
-                  </div>
-                  <div className="card-body">
-                    <p className="card-text"><small className="text-muted">N° {elem.id}</small></p>
-                    <h4 className="card-title pokemon-name d-flex justify-content-center">{elem.name}</h4>
-                  </div>
-                </Link>)}
-          </section>}
+        {this.state.error ? (
+          <div className="home-card">
+            <div className="card text-center my-5">
+              <img className="card-img-top error-image" src="/images/error.jpg" alt="Pikachu no hospital" />
+              <div className="card-body">
+                <h5 className="card-title">Erro para carregar os Pokémons</h5>
+                <p className="card-text">Verifique sua conexão e recarregue a página</p>
+              </div>
+            </div>
+          </div>) :
+          this.state.list === null ?
+            <Loading /> : (
+              <section className="home-card">
+                {this.state.filterList.length === 0 ?
+                  <div className="card text-center my-5">
+                    <img className="card-img-top error-image" src="/images/sem-pokemon.jpg" alt="Pikachu triste" />
+                    <div className="card-body">
+                      <h5 className="card-title">Nenhum Pokémon encontrado </h5>
+                      <p className="card-text">Verifique sua pesquisa</p>
+                    </div>
+                  </div> : this.state.filterList.map((elem) =>
+                    <Link to={`/details/${elem.id}`} className="card m-3" style={{ width: '18rem' }}>
+                      <div>
+                        <PokemonImg id={elem.id} />
+                      </div>
+                      <div className="card-body">
+                        <p className="card-text"><small className="text-muted">N° {elem.id}</small></p>
+                        <h4 className="card-title pokemon-name d-flex justify-content-center">{elem.name}</h4>
+                      </div>
+                    </Link>)}
+              </section>)}
       </div>
     )
   }
