@@ -40,20 +40,25 @@ class Home extends Component {
   render() {
     return (
       <div className="container-fluid home-page">
-        <input className="form-control form-control-lg col-12 d-flex justify-content-center" value={this.state.filter} onChange={this.setFilter} placeholder="Pesquise por um Pokémon" />
+        <input className="form-control form-control-lg col-12 d-flex justify-content-center" type="search" value={this.state.filter} onChange={this.setFilter} placeholder="Pesquise por um Pokémon" />
         {this.state.list === null ?
           <Loading /> :
           <section className="home-card">
-            {this.state.filterList.map((elem) =>
-              <Link to={`/details/${elem.id}`} className="card m-3" style={{ width: '18rem' }}>
-                <div>
-                  <PokemonImg id={elem.id} />
-                </div>
+            {this.state.filterList.length === 0 ?
+              <div className="card mt-5">
                 <div className="card-body">
-                  <p className="card-text"><small className="text-muted">N° {elem.id}</small></p>
-                  <h4 className="card-title pokemon-name d-flex justify-content-center">{elem.name}</h4>
+                  <h5 className="card-title">Nenhum Pokémon encontrado verifique sua pesquisa</h5>
                 </div>
-              </Link>)}
+              </div> : this.state.filterList.map((elem) =>
+                <Link to={`/details/${elem.id}`} className="card m-3" style={{ width: '18rem' }}>
+                  <div>
+                    <PokemonImg id={elem.id} />
+                  </div>
+                  <div className="card-body">
+                    <p className="card-text"><small className="text-muted">N° {elem.id}</small></p>
+                    <h4 className="card-title pokemon-name d-flex justify-content-center">{elem.name}</h4>
+                  </div>
+                </Link>)}
           </section>}
       </div>
     )
