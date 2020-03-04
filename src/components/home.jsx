@@ -44,7 +44,14 @@ class Home extends Component {
   render() {
     return (
       <div className="container-fluid home-page">
-        <input className="form-control form-control-lg col-12 d-flex justify-content-center" type="search" value={this.state.filter} onChange={this.setFilter} placeholder="Pesquise por um Pokémon" />
+        <div class="input-group">
+          
+          <input className="form-control form-control-lg col-12 d-flex justify-content-center" type="search" value={this.state.filter} onChange={this.setFilter} placeholder="Pesquise por um Pokémon" />
+        <div class="input-group-prepend">
+            <span className="input-group-text">
+            <img className="lupa"src="/images/pesquisa.png" alt="Lupa" />
+            </span>
+          </div></div>
         {this.state.error ? (
           <div className="home-card">
             <div className="card text-center my-5">
