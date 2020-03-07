@@ -45,7 +45,7 @@ class Home extends Component {
     return (
       <div className="container-fluid home-page">
         <div className="input-group">
-          <input className="form-control form-control-lg col-12 d-flex justify-content-center" type="search" value={this.state.filter} onChange={this.setFilter} placeholder="Pesquise por um Pokémon" />
+          <input className="form-control form-control-lg col-12 d-flex justify-content-center" type="search" value={this.state.filter} onChange={this.setFilter} placeholder="Search for a Pokémon" />
           <div className="input-group-prepend">
             <span className="input-group-text">
               <img className="lupa" src="/images/pesquisa.png" alt="Lupa" />
@@ -57,8 +57,8 @@ class Home extends Component {
             <div className="card text-center my-5">
               <img className="card-img-top error-image" src="/images/error.jpg" alt="Pikachu no hospital" />
               <div className="card-body">
-                <h5 className="card-title">Erro para carregar os Pokémons</h5>
-                <p className="card-text">Verifique sua conexão e recarregue a página</p>
+                <h5 className="card-title">Error loading Pokémon</h5>
+                <p className="card-text">Check your connection and reload the page</p>
               </div>
             </div>
           </div>) :
@@ -69,8 +69,8 @@ class Home extends Component {
                   <div className="card text-center my-5">
                     <img className="card-img-top error-image" src="/images/sem-pokemon.jpg" alt="Pikachu triste" />
                     <div className="card-body">
-                      <h5 className="card-title">Nenhum Pokémon encontrado </h5>
-                      <p className="card-text">Verifique sua pesquisa</p>
+                      <h5 className="card-title">No Pokémon found</h5>
+                      <p className="card-text">Check your search</p>
                     </div>
                   </div> : this.state.filterList.map((elem) =>
                     <Link to={`/details/${elem.id}`} className="card m-3" style={{ width: '18rem' }}>
